@@ -26,6 +26,7 @@ function initMap() {
             var hemsida = values[7];
 
             if (!isNaN(lat) && !isNaN(lng)) {
+               console.log("Latitude:", lat, "Longitude:", lng); // Log latitude and longitude
                 var marker = L.marker([lat, lng]).addTo(map);
                 marker.bindPopup(`<b>${name}</b><br>${stad}<br>${adress}<br><a href="${hemsida}">${hemsida}</a>`);
             }
