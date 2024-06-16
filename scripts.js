@@ -1,12 +1,12 @@
 // Function to initialize the map
 function initMap() {
-    // Initialize the map with Mapbox Dark theme tiles
-    const map = L.map('map').setView([57.69357, 11.91878], 11);
+     // Initialize the map with Mapbox Dark theme tiles
+     const map = L.map('map').setView([57.69357, 11.91878], 11);
 
-    // Mapbox Dark theme tile layer
-    L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-        maxZoom: 18,
-        tileSize: 512,
+     // Mapbox Dark theme tile layer
+     L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+         maxZoom: 18,
+         tileSize: 512,
         zoomOffset: -1,
         accessToken: 'pk.eyJ1IjoidGFwbWFwcGVyIiwiYSI6ImNsM2oxMDhjbzA0Mm0zY3BpcXU2eXY0M24ifQ.FKBua5KuBWQdGScKpfaMXA' // Replace with your Mapbox access token
     }).addTo(map);
@@ -49,4 +49,3 @@ function initMap() {
 
 // Initialize the map on page load
 window.onload = initMap;
-
