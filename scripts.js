@@ -13,23 +13,22 @@ function initMap() {
 
     // Function to parse CSV and add markers with popups to the map
     function addMarkersFromCSV(csv) {
-        function addMarkersFromCSV(csv) {
-    var lines = csv.split("\n");
+        var lines = csv.split("\n");
 
-    lines.forEach(function(line) {
-        var values = line.split(",");
+        lines.forEach(function(line) {
+            var values = line.split(",");
 
-        var lat = parseFloat(values[5]);
-        var lng = parseFloat(values[6]);
-        var name = values[0];
-        var stad = values[2];
-        var adress = values[3] + values[4];
-        var hemsida = values[7];
+            var lat = parseFloat(values[5]);
+            var lng = parseFloat(values[6]);
+            var name = values[0];
+            var stad = values[2];
+            var adress = values[3] + values[4];
+            var hemsida = values[7];
 
-        if (!isNaN(lat) && !isNaN(lng)) {
-            var marker = L.marker([lat, lng]).addTo(map);
-            marker.bindPopup(`<b>${name}</b><br>${stad}<br>${adress}<br><a href="${hemsida}">${hemsida}</a>`);
-        }
+            if (!isNaN(lat) && !isNaN(lng)) {
+                var marker = L.marker([lat, lng]).addTo(map);
+                marker.bindPopup(`<b>${name}</b><br>${stad}<br>${adress}<br><a href="${hemsida}">${hemsida}</a>`);
+            }
         });
     }
 
@@ -47,6 +46,7 @@ function initMap() {
         })
         .catch(error => console.error('Error fetching the CSV file:', error));
 }
+
 // Initialize the map on page load
 window.onload = initMap;
 
