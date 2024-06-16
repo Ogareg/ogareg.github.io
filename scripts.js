@@ -36,7 +36,7 @@ function initMap() {
                     // Use custom icon for marker
                     let customIcon = L.icon({
                         iconUrl: markerType,  // URL to the icon image
-                        iconSize: [40, 70],  // size of the icon
+                        iconSize: [200, 70],  // size of the icon
                         iconAnchor: [20, 70],  // point of the icon which will correspond to marker's location
                         popupAnchor: [0, -70],  // point from which the popup should open relative to the iconAnchor
                         shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
