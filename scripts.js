@@ -1,7 +1,7 @@
 // Function to initialize the map
 function initMap() {
     // Initialize the map with Mapbox GL JS
-    mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN';
+    mapboxgl.accessToken = 'pk.eyJ1IjoidGFwbWFwcGVyIiwiYSI6ImNseGh1cmMwZDE2eW8yaXM2cWtpcHhjODgifQ.ZD1dxfZEbLmAflO6B8ghgg';
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/dark-v10',
