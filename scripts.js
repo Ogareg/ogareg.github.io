@@ -24,9 +24,10 @@ function initMap() {
             var stad = values[2];
             var adress = values[3] + values[4];
             var hemsida = values[7];
+           console.log("Latitude:", lat, "Longitude:", lng); // Log latitude and longitude
 
             if (!isNaN(lat) && !isNaN(lng)) {
-               console.log("Latitude:", lat, "Longitude:", lng); // Log latitude and longitude
+               
                 var marker = L.marker([lat, lng]).addTo(map);
                 marker.bindPopup(`<b>${name}</b><br>${stad}<br>${adress}<br><a href="${hemsida}">${hemsida}</a>`);
             }
