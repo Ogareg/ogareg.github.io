@@ -13,42 +13,23 @@ function initMap() {
 
     // Function to parse CSV and add markers with popups to the map
     function addMarkersFromCSV(csv) {
-        // Split CSV into lines
-        var lines = csv.split("\n");
+        function addMarkersFromCSV(csv) {
+    var lines = csv.split("\n");
 
-        // Loop through lines
-        lines.forEach(function(line) {
-            // Split line into values
-            var values = line.split(",");
+    lines.forEach(function(line) {
+        var values = line.split(",");
 
-            // Extract latitude, longitude, and name
-            var lat = parseFloat(values[5]);
-            var lng = parseFloat(values[6]);
-            var name = values[0];
-            var stad = values[2];
-            var adress = values[3] + values[4];
-            var hemsida = values[7];
-            var markerType = values[8];  // Assuming the 9th column is for marker type/icon
+        var lat = parseFloat(values[5]);
+        var lng = parseFloat(values[6]);
+        var name = values[0];
+        var stad = values[2];
+        var adress = values[3] + values[4];
+        var hemsida = values[7];
 
-            // Create marker with popup
-            if (!isNaN(lat) && !isNaN(lng)) {
-                if (markerType) {
-                    // Use custom icon for marker
-                    let customIcon = L.icon({
-                        iconUrl: markerType,  // URL to the icon image
-                        iconSize: [40, 70],  // size of the icon
-                        iconAnchor: [20, 70],  // point of the icon which will correspond to marker's location
-                        popupAnchor: [0, -70],  // point from which the popup should open relative to the iconAnchor
-                        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-                        shadowSize: [40, 70],  // size of the shadow
-                        shadowAnchor: [15, 75]  // point of the shadow which will correspond to marker's location
-                    });
-                    var marker = L.marker([lat, lng], { icon: customIcon }).addTo(map);
-                } else {
-                    var marker = L.marker([lat, lng]).addTo(map);
-                }
-                marker.bindPopup(`<b>${name}</b><br>${stad}<br>${adress}<br><a href="${hemsida}">${hemsida}</a>`);
-            }
+        if (!isNaN(lat) && !isNaN(lng)) {
+            var marker = L.marker([lat, lng]).addTo(map);
+            marker.bindPopup(`<b>${name}</b><br>${stad}<br>${adress}<br><a href="${hemsida}">${hemsida}</a>`);
+        }
         });
     }
 
