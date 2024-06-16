@@ -53,7 +53,7 @@ function initMap() {
     }
 
     // Fetch and parse CSV file automatically
-    fetch('data/Tapmap.csv')
+    fetch('Tapmap.csv')
         .then(response => {
             // Debugging: Log if fetch was successful
             console.log('CSV file fetched successfully');
