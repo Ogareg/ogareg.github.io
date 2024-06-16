@@ -36,12 +36,12 @@ function initMap() {
                     // Use custom icon for marker
                     let customIcon = L.icon({
                         iconUrl: markerType,  // URL to the icon image
-                        iconSize: [40, 70],  // size of the icon
-                        iconAnchor: [20, 70],  // point of the icon which will correspond to marker's location
+                        iconSize: [70, 70],  // size of the icon
+                        iconAnchor: [35, 70],  // point of the icon which will correspond to marker's location
                         popupAnchor: [0, -70],  // point from which the popup should open relative to the iconAnchor
                         shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-                        shadowSize: [40, 70],  // size of the shadow
-                        shadowAnchor: [15, 75]  // point of the shadow which will correspond to marker's location
+                        shadowSize: [70, 70],  // size of the shadow
+                        shadowAnchor: [30, 75]  // point of the shadow which will correspond to marker's location
                     });
                     var marker = L.marker([lat, lng], { icon: customIcon }).addTo(map);
                 } else {
