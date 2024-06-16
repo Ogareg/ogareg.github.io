@@ -1,12 +1,12 @@
 // Function to initialize the map
 function initMap() {
     // Initialize the map with Mapbox GL JS
-    mapboxgl.accessToken = 'pk.eyJ1IjoidGFwbWFwcGVyIiwiYSI6ImNsM2oxMDhjbzA0Mm0zY3BpcXU2eXY0M24ifQ.FKBua5KuBWQdGScKpfaMXA';
+    mapboxgl.accessToken = 'pk.eyJ1IjoidGFwbWFwcGVyIiwiYSI6ImNseGh1cmMwZDE2eW8yaXM2cWtpcHhjODgifQ.ZD1dxfZEbLmAflO6B8ghgg';
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/dark-v10',
         center: [11.91878, 57.69357],
-        zoom: 12
+        zoom: 11
     });
 
     // Function to parse CSV and add markers with popups to the map
@@ -69,5 +69,3 @@ function initMap() {
 
 // Initialize the map on page load
 window.onload = initMap;
-
-
