@@ -1,10 +1,10 @@
 // Function to initialize the map
 function initMap() {
     // Initialize the map with Mapbox GL JS
-    // mapboxgl.accessToken = 'pk.eyJ1IjoidGFwbWFwcGVyIiwiYSI6ImNseGh1cmMwZDE2eW8yaXM2cWtpcHhjODgifQ.ZD1dxfZEbLmAflO6B8ghgg';
-    var map = new maplibregl.Map({
-        container: 'map', // container id
-        style: 'https://demotiles.maplibre.org/style.json', // style URL
+    mapboxgl.accessToken = 'pk.eyJ1IjoidGFwbWFwcGVyIiwiYSI6ImNseGh1cmMwZDE2eW8yaXM2cWtpcHhjODgifQ.ZD1dxfZEbLmAflO6B8ghgg';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/dark-v10',
         center: [11.91878, 57.69357],
         zoom: 12
     });
@@ -46,7 +46,7 @@ function initMap() {
                 }
 
                 // Create a custom marker
-                var customMarker = new maplibregl.Marker(customMarkerEl)
+                var customMarker = new mapboxgl.Marker(customMarkerEl)
                     .setLngLat([lng, lat])
                     .addTo(map);
 
@@ -54,7 +54,7 @@ function initMap() {
                 var popupContent = `<b>${name}</b><br>${stad}<br>${adress}<br><a href="${hemsida}" target="_blank">${hemsida}</a>`;
 
                 // Create popup
-                var popup = new maplibregl.Popup({ offset: 25 })
+                var popup = new mapboxgl.Popup({ offset: 25 })
                     .setHTML(popupContent);
 
                 // Bind popup to marker
