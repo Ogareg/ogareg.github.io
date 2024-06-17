@@ -2,9 +2,9 @@
 function initMap() {
     // Initialize the map with Mapbox GL JS
     mapboxgl.accessToken = 'pk.eyJ1IjoidGFwbWFwcGVyIiwiYSI6ImNseGh1cmMwZDE2eW8yaXM2cWtpcHhjODgifQ.ZD1dxfZEbLmAflO6B8ghgg';
-    var map = new mapboxgl.Map({
+    var map = new maplibregl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/dark-v10',
+        //style: 'mapbox://styles/mapbox/dark-v10',
         center: [11.91878, 57.69357],
         zoom: 12
     });
