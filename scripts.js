@@ -46,7 +46,7 @@ function initMap() {
                 }
 
                 // Create a custom marker
-                var customMarker = new mapboxgl.Marker(customMarkerEl)
+                var customMarker = new Marker(customMarkerEl)
                     .setLngLat([lng, lat])
                     .addTo(map);
 
@@ -54,7 +54,7 @@ function initMap() {
                 var popupContent = `<b>${name}</b><br>${stad}<br>${adress}<br><a href="${hemsida}" target="_blank">${hemsida}</a>`;
 
                 // Create popup
-                var popup = new mapboxgl.Popup({ offset: 25 })
+                var popup = new Popup({ offset: 25 })
                     .setHTML(popupContent);
 
                 // Bind popup to marker
