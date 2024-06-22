@@ -51,7 +51,7 @@ function initMap() {
                     .addTo(map);
 
                 // Create popup content
-                var popupContent = `<b>${name}</b><br>${stad}<br>${adress}<br><a href="${hemsida}" target="_blank">${hemsida}</a>`;
+                var popupContent = `<h3>${name}</h3><br>${stad}<br>${adress}<br><a href="${hemsida}" target="_blank">${hemsida}</a>`;
 
                 // Create popup
                 var popup = new mapboxgl.Popup({ offset: 25 })
