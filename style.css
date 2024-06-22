@@ -1,4 +1,81 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    
+}
+.logo{
+    cursor: pointer;
+    height: 40px;
+}
+.logo img{
+    height: 40px;
+}
+li, a{
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+header{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10px;
+    background-color: #24252A;
+}
+
+.nav_links{
+    list-style: none;
+}
+
+.nav_links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav_links a{
+   color: #edf0f1;
+}
+
+/* Marker tweaks */
+.mapboxgl-popup-close-button {
+  display: none;
+}
+
+.mapboxgl-popup-content {
+  font:
+    400 15px/22px 'Source Sans Pro',
+    'Helvetica Neue',
+    sans-serif;
+  padding: 0;
+  width: 300px;
+}
+
+.mapboxgl-popup-content h3 {
+  background: #f0b526;
+  color: #fff;
+  margin: 0;
+  padding: 10px;
+  border-radius: 3px 3px 0 0;
+  font-weight: 700;
+  margin-top: -15px;
+}
+
+.mapboxgl-popup-content h4 {
+  margin: 0;
+  padding: 10px;
+  font-weight: 400;
+}
+
+.mapboxgl-popup-content div {
+  padding: 10px;
+}
+
 #map{
     width: 100%;
-    height: 100vh;
+    height: calc(100vh-80px);
 }
