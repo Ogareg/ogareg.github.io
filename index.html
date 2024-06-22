@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Custom Styled Map with Auto-loaded CSV</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link href='https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css' rel='stylesheet' />
     <style>
         #map {
@@ -18,12 +19,19 @@
         }
     </style>
 </head>
-<header>
-  <h1>TapMap</h1>
-  <img src="image/icon1.png" alt="Beer" />
-</header>
+
 
 <body>
+    <header>
+        <img class="logo" src="image/icon1.png" alt="logo" />
+        <nav>
+            <ul class="nav_links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     <div id="map"></div>
     <script src='https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js'></script>
     <script src="scripts.js"></script>
