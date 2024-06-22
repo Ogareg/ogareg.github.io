@@ -51,8 +51,8 @@ header{
     400 16px/22px 'Source Sans Pro',
     'Helvetica Neue',
     sans-serif;
-  padding: 0;
-  width: 300px;
+  padding: 10px;
+  width: 180px;
 }
 
 .mapboxgl-popup-content h3 {
