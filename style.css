@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
-    background-color: #24252A;
+    
 }
 .logo{
     cursor: pointer;
@@ -26,6 +26,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 30px 10px;
+    background-color: #24252A;
 }
 
 .nav_links{
