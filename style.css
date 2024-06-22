@@ -41,6 +41,12 @@ header{
    color: #edf0f1;
 }
 
+.mapboxgl-Popup{
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
 #map{
     width: 100%;
     height: calc(100vh-80px);
