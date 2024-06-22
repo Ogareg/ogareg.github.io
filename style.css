@@ -76,6 +76,10 @@ header{
   padding: 10px;
 }
 
+.mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
+  margin-top: 15px;
+}
+
 #map{
     width: 100%;
     height: calc(100vh-80px);
