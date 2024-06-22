@@ -1,15 +1,13 @@
 // Function to initialize the map
 function initMap() {
-    // Initialize the map with Mapbox Dark theme tiles
-    const map = L.map('map').setView([57.69357, 11.91878], 11);
-
-    // Mapbox Dark theme tile layer
-    L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-        maxZoom: 18,
-        tileSize: 512,
-        zoomOffset: -1,
-        accessToken: 'pk.eyJ1IjoidGFwbWFwcGVyIiwiYSI6ImNsM2oxMDhjbzA0Mm0zY3BpcXU2eXY0M24ifQ.FKBua5KuBWQdGScKpfaMXA' // Replace with your Mapbox access token
-    }).addTo(map);
+    // Initialize the map with Mapbox GL JS
+    mapboxgl.accessToken = 'pk.eyJ1IjoidGFwbWFwcGVyIiwiYSI6ImNseGh1cmMwZDE2eW8yaXM2cWtpcHhjODgifQ.ZD1dxfZEbLmAflO6B8ghgg';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/dark-v10',
+        center: [11.972913867962761, 57.70925479892651],
+        zoom: 12
+    });
 
     // Function to parse CSV and add markers with popups to the map
     function addMarkersFromCSV(csv) {
@@ -17,7 +15,10 @@ function initMap() {
         var lines = csv.split("\n");
 
         // Loop through lines
-        lines.forEach(function(line) {
+        lines.forEach(function(line, index) {
+            // Skip the header line if present
+            if (index === 0 && line.includes("name")) return;
+
             // Split line into values
             var values = line.split(",");
 
@@ -26,28 +27,38 @@ function initMap() {
             var lng = parseFloat(values[6]);
             var name = values[0];
             var stad = values[2];
-            var adress = values[3] + values[4];
+            var adress = values[3] + " " + values[4];
             var hemsida = values[7];
             var markerType = values[8];  // Assuming the 9th column is for marker type/icon
 
+            // Debugging: Log the parsed values
+            console.log('Parsed values:', { lat, lng, name, stad, adress, hemsida, markerType });
+
             // Create marker with popup
             if (!isNaN(lat) && !isNaN(lng)) {
+                // Create a div element for the custom marker
+                var customMarkerEl = document.createElement('div');
+                customMarkerEl.className = 'custom-marker';
                 if (markerType) {
-                    // Use custom icon for marker
-                    let customIcon = L.icon({
-                        iconUrl: markerType,  // URL to the icon image
-                        iconSize: [70, 70],  // size of the icon
-                        iconAnchor: [20, 70],  // point of the icon which will correspond to marker's location
-                        popupAnchor: [0, -70],  // point from which the popup should open relative to the iconAnchor
-                        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-                        shadowSize: [40, 70],  // size of the shadow
-                        shadowAnchor: [15, 75]  // point of the shadow which will correspond to marker's location
-                    });
-                    var marker = L.marker([lat, lng], { icon: customIcon }).addTo(map);
+                    customMarkerEl.style.backgroundImage = `url(${markerType})`;
                 } else {
-                    var marker = L.marker([lat, lng]).addTo(map);
+                    customMarkerEl.style.backgroundImage = 'url(default_marker.png)';  // Fallback to a default marker image
                 }
-                marker.bindPopup(`<b>${name}</b><br>${stad}<br>${adress}<br><a href="${hemsida}">${hemsida}</a>`);
+
+                // Create a custom marker
+                var customMarker = new mapboxgl.Marker(customMarkerEl)
+                    .setLngLat([lng, lat])
+                    .addTo(map);
+
+                // Create popup content
+                var popupContent = `<h3>${name}</h3><br>${stad}<br>${adress}<br><a href="${hemsida}" target="_blank">${hemsida}</a>`;
+
+                // Create popup
+                var popup = new mapboxgl.Popup({ offset: 25 })
+                    .setHTML(popupContent);
+
+                // Bind popup to marker
+                customMarker.setPopup(popup);
             }
         });
     }
@@ -66,6 +77,6 @@ function initMap() {
         })
         .catch(error => console.error('Error fetching the CSV file:', error));
 }
+
 // Initialize the map on page load
 window.onload = initMap;
-
