@@ -48,7 +48,7 @@ header{
 
 .mapboxgl-popup-content {
   font:
-    400 15px/22px 'Source Sans Pro',
+    400 16px/22px 'Source Sans Pro',
     'Helvetica Neue',
     sans-serif;
   padding: 0;
@@ -59,7 +59,7 @@ header{
   background: #f0b526;
   color: #fff;
   margin: 0;
-  padding: 10px;
+  padding: 0;
   border-radius: 3px 3px 0 0;
   font-weight: 700;
   margin-top: -15px;
