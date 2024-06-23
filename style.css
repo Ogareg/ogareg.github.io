@@ -81,7 +81,7 @@ header{
   margin-top: 15px;
 }
 #map {
-    width: 50vw;
+    width: 100vw;
     height: 100vh;
 }
         
@@ -92,4 +92,5 @@ header{
     border-radius: 100%;
     cursor: pointer;
     background-color: transparent;
+    transition: none;
 }
