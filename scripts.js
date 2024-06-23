@@ -80,3 +80,13 @@ function initMap() {
 
 // Initialize the map on page load
 window.onload = initMap;
+
+map.on('resize', function() {
+    map.resize();
+    // Optionally re-center or re-position markers
+    markers.forEach(marker => {
+        const lngLat = marker.getLngLat();
+        marker.setLngLat([lngLat.lng, lngLat.lat]);
+    });
+});
+
