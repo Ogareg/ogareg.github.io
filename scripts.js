@@ -6,7 +6,7 @@ function initMap() {
         container: 'map',
         style: 'mapbox://styles/mapbox/dark-v10',
         center: [11.972913867962761, 57.70925479892651],
-        zoom: 11
+        zoom: 10
     });
 
     // Function to parse CSV and add markers with popups to the map
