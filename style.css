@@ -94,3 +94,9 @@ header{
     background-color: transparent;
     transition: none;
 }
+ @media (max-width: 600px) {
+    .custom-marker {
+        width: 45px;
+        height: 45px;
+    }
+ }
