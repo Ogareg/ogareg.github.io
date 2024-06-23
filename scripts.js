@@ -51,10 +51,10 @@ function initMap() {
                     .addTo(map);
 
                 // Create popup content
-                var popupContent = `<h3>${name}</h3><h4>${stad}</h4><br><h4>${adress}<br></h4><h4><a href="${hemsida}" target="_blank">${hemsida}</a></h4>`;
+                var popupContent = `<h3>${name}</h3><h4>${stad}<br></h4><h4>${adress}<br></h4><h4><a href="${hemsida}" target="_blank">${hemsida}</a></h4>`;
 
                 // Create popup
-                var popup = new mapboxgl.Popup({ offset: 0 })
+                var popup = new mapboxgl.Popup({offset: [0, -50/2]})
                     .setHTML(popupContent);
 
                 // Bind popup to marker
