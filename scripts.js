@@ -2,12 +2,22 @@
 function initMap() {
     // Initialize the map with Mapbox GL JS
     mapboxgl.accessToken = 'pk.eyJ1IjoidGFwbWFwcGVyIiwiYSI6ImNseGh1cmMwZDE2eW8yaXM2cWtpcHhjODgifQ.ZD1dxfZEbLmAflO6B8ghgg';
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/dark-v10',
-        center: [11.972913867962761, 57.70925479892651],
-        zoom: 10
-    });
+  var mq = window.matchMedia("(min-width: 600px)");
+    if (mq.matches){
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/dark-v10',
+            center: [11.972913867962761, 57.70925479892651],
+            zoom:12
+        });
+    } else {
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/dark-v10',
+            center: [11.972913867962761, 57.70925479892651],
+            zoom:10
+        });
+    }
 
     // Function to parse CSV and add markers with popups to the map
     function addMarkersFromCSV(csv) {
