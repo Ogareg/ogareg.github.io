@@ -27,10 +27,10 @@ function initMap() {
         // Loop through lines
         lines.forEach(function(line, index) {
             // Skip the header line if present
-            if (index === 0 && line.includes("name")) return;
+            if (index === 0 && line.includes("Stad")) return;
 
             // Split line into values
-            var values = line.split(",");
+            var values = line.split("\t");
 
             // Extract latitude, longitude, and name
             var lat = parseFloat(values[5]);
@@ -74,7 +74,7 @@ function initMap() {
     }
 
     // Fetch and parse CSV file automatically
-    fetch('Tapmap.csv')
+    fetch('Tapmap.tsv')
         .then(response => {
             // Debugging: Log if fetch was successful
             console.log('CSV file fetched successfully');
