@@ -31,15 +31,16 @@ function initMap() {
 
             // Split line into values
             var values = line.split("\t");
-
+            var latlang = values[4].split(",");
+            
             // Extract latitude, longitude, and name
-            var lat = parseFloat(values[5]);
-            var lng = parseFloat(values[6]);
+            var lat = parseFloat(latlang[0]);
+            var lng = parseFloat(latlang[1]);
             var name = values[0];
             var stad = values[2];
-            var adress = values[3] + " " + values[4];
-            var hemsida = values[7];
-            var markerType = values[8];  // Assuming the 9th column is for marker type/icon
+            var adress = values[3];
+            var hemsida = values[5];
+            var markerType = values[6];  // Assuming the 9th column is for marker type/icon
 
             // Debugging: Log the parsed values
             console.log('Parsed values:', { lat, lng, name, stad, adress, hemsida, markerType });
